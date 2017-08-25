@@ -231,7 +231,7 @@ char screen[16][0x84];
 
 void screen_set_pixel(unsigned __int8 x, unsigned __int8 y)
 {
-	screen[y][x] = '#';
+	screen[y][x] = 'O';
 }
 
 unsigned __int8 print_char_with_font(char ch, unsigned __int8 screen_x, unsigned __int8 screen_y, font_struct *font)
@@ -318,12 +318,8 @@ unsigned int print_with_font(char *string, unsigned __int8 x, unsigned __int8 y,
 int main()
 {
 	memset(screen, ' ', 0x84 * 32);
-	//	print_with_font("2017-08-23 22:02:56", 1, 0, &normal_font);
-	//	print_with_font("USER F G BEGIN GRAD D.MY C PRGM", 7, 9, &small_font);
-	print_with_font("- 8,8,8,8,8,8,8,8,8,8,", 1, 0, &normal_font);
+	print_with_font("2017-08-23 22:02:56", 1, 0, &normal_font);
 	print_with_font("USER F G BEGIN GRAD D.MY C PRGM", 7, 9, &small_font);
-	//	print_with_font("HELLO WORLD", 0, 20, &font_3_struct);
-	//	print_with_font("HELLO WORLD", 0, 9, &font_3_struct);
 
 	for (int y = 0; y < 16; y++) {
 		for (int x = 0; x < 0x84; x++) {
